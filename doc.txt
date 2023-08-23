@@ -1,0 +1,14 @@
+22.08.2023
+	First session with Tim.
+		- Mock-up about the data flow.
+		- Ideas about data flow.
+		- Potential problems.
+
+23.08.2023
+	Second sesson with Tim.
+		- Introduction of https://www.piesocket.com/websocket-tester -> Websocket client
+		- Research about possible trading platforms with open websockets 
+	
+	Learning
+		- How can i code a webSocket using C++.
+		- First steps trying from scratch.
