@@ -12,3 +12,6 @@
 	Learning
 		- How can i code a webSocket using C++.
 		- First steps trying from scratch.
+		- Try "asio" library.
+		- Try "WebSocketpp" library.
+			° I figured out that the -lpthread flag is needed to compile with the websocketpp library.
