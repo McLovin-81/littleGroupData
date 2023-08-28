@@ -12,5 +12,3 @@
 	Learning
 		- How can i code a webSocket using C++.
 		- First steps trying from scratch.
-		- First steps trying websocketpp.
-		- First steps trying asio.
