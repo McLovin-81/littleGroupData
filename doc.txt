@@ -29,4 +29,4 @@
 		- Every list has a tride id. Filter if a trade id was already give.
 		- After filtering, push the new data to main file (list).
 
-		- Try bas script
+		- Try bash script
