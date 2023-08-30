@@ -36,7 +36,7 @@ std::cout << "Last working line" << std::endl;
       return websocketpp::lib::make_shared<boost::asio::ssl::context>(boost::asio::ssl::context::tlsv12_client);
    });
 
-   c.get_connection("wss://ws.kraken.com", ec);
+   c.get_connection("wss://api-pub.bitfinex.com/ws/2", ec);
 
    if (ec)
    {
