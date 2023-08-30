@@ -15,3 +15,18 @@
 		- Try "asio" library.
 		- Try "WebSocketpp" library.
 			° I figured out that the -lpthread flag is needed to compile with the websocketpp library.
+
+29.08.2023
+	- Code review with Ansgar.
+	- Pair programming with Ansgar.
+
+30.08.2023
+	- Code refactoring.
+	- Pear programming with Tim.
+		
+	Session about REST API with Tim
+		- curl -v https://api.bitfinex.com/v1/symbols_details oder curl -v https://api.bitfinex.com/v1/trades/btcusd
+		- Every list has a tride id. Filter if a trade id was already give.
+		- After filtering, push the new data to main file (list).
+
+		- Try bas script
