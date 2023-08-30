@@ -30,3 +30,5 @@
 		- After filtering, push the new data to main file (list).
 
 		- Try bash script
+
+		GET WEBSOCKET USING PYTHON -> USING PROTOBUFF SEND THE DATA TO A C++ CODE?
