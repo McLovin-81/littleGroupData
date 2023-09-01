@@ -1,3 +1,6 @@
 REST (Representational State Transfer), is an API that follows a set of rules through which
 applications and servers communicate. It was specifically designed for working
 with components like files, objects, and media components. 
+
+- Add Histogram
+- Add Graphics
