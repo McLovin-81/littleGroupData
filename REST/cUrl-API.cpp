@@ -57,4 +57,4 @@ int main()
 }
 
 // Build command
-// g++ main.cpp -o main -lcurl
+// g++ main.cpp -o main -l curl

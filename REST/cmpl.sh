@@ -10,7 +10,7 @@ EXECUTABLE_NAME="cUrl-API"
 #CURL_LIBRARY_PATH="/usr/lib"
 
 # The command to compile the program
-COMMAND="g++ ${FILE_NAME} -o ${EXECUTABLE_NAME} -lcurl"
+COMMAND="g++ ${FILE_NAME} -o ${EXECUTABLE_NAME} -l curl"
 
 # Run the command
 echo "Compiling ${FILE_NAME}.."
@@ -23,5 +23,5 @@ echo "Done!"
 # Delete the executable
 rm ${EXECUTABLE_NAME}
 
-# chmod +x <fileName>
-# Change the the permissions on the script!
+# chmod +x <fileName> -> Change permision.
+ 
