@@ -1,4 +1,4 @@
-Project Goals:
+## Project Goals:
 
 The primary objectives of this project are as follows:
 
@@ -51,7 +51,7 @@ By combining these technologies, we create a robust and efficient ecosystem for 
   - First steps trying from scratch.
   - Try "asio" library.
   - Try "WebSocketpp" library.
-    - I figured out that the `-lpthread` flag is needed to compile with the WebSocketpp library.
+  - I figured out that the `-l pthread` flag is needed to compile with the WebSocketpp library.
 
 **29.08.2023**
 - Code review with Ansgar.
