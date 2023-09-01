@@ -2,7 +2,7 @@
 #include <curl/curl.h>
 
 // Callback function to process received data.
-static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) 
+static size_t writeCallback(void *contents, size_t size, size_t nmemb, void *userp) 
 {
     size_t totalSize = size * nmemb;
     std::string *output = static_cast<std::string*>(userp);
@@ -34,7 +34,7 @@ int main()
     // Set the URL to request
     curl_easy_setopt(curl, CURLOPT_URL, "https://api.bitfinex.com/v1/trades/btcusd");
     // Set the callback function for writing received data
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
     // Set the output string for the callback function
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &apiResponse);
 
