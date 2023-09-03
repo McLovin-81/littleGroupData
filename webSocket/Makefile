@@ -1,20 +1,35 @@
-CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra
-LIBS = -lpthread -lssl -lcrypto
+# Google Test library location
+WEBSOCKETPP_LIB = websocketpp
 
-# Specify the source file and the output executable
-SRC = webSocketClient.cpp
-OUT = webSocketClient
+# Compiler flags
+CXX_FLAGS = -Wall -c -I /opt/homebrew/Cellar/websocketpp/0.8.2/include -I /opt/homebrew/include -std=c++20
 
-# Specify include directories
-INCLUDES = -I/path/to/websocketpp/include
+# Linker flags
+LD_FLAGS = -L /opt/homebrew/Cellar/openssl@3/3.1.2/lib -lssl  -lpthread  -lcrypto
 
-all: $(OUT)
+# Target executable name
+TARGET = webSocketClient
 
-$(OUT): $(SRC)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $(LIBS) -o $@ $<
+# Source files
+SOURCES = webSocketClient.cpp
 
+# Object files (derived from source files)
+OBJECTS = $(SOURCES:.cpp=.o)
+
+# Default target to build the executable
+all: $(TARGET)
+
+# Rule to build the executable
+$(TARGET): $(OBJECTS)
+	g++ -o $(TARGET) $(OBJECTS) $(LD_FLAGS)
+
+# Rule to compile source files into object files
+%.o: %.cpp
+	g++ $(CXX_FLAGS) $<
+
+# Clean up compiled files and the executable
 clean:
-	rm -f $(OUT)
+	rm -f $(TARGET) $(OBJECTS)
 
-.PHONY: clean
+# Mark "all" and "clean" as phony targets (no files with these names)
+.PHONY: all clean
