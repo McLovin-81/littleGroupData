@@ -22,7 +22,8 @@ void on_message(Client* client, ConnectionHdl hdl, websocketpp::config::asio_cli
 
 void on_open(Client* client, ConnectionHdl hdl)
 {
-  std::string msg{"hello"};
+  //std::string msg = "hello";
+  std::string msg = "event:subscribe,channel:trades,chanId:19111,symbol:tBTCUSD,pair:BTCUSD";
   std::cout << "on_open: send " << msg << std::endl;
   client->send(hdl, msg, websocketpp::frame::opcode::text);
 }
@@ -75,7 +76,8 @@ int main()
 {
   Client client;
 
-  // turn_off_logging(client);
+  // Comment out to show access information and errors.
+  turn_off_logging(client);
 
   client.init_asio();
 
@@ -85,7 +87,7 @@ int main()
 
   set_message_handler(client);
 
-  set_url(client, "wss://api-pub.bitfinex.com/ws/2:443");
+  set_url(client, "wss://api-pub.bitfinex.com/ws/2");
 
 
   client.run();

@@ -1,8 +1,8 @@
-# Google Test library location
+# Websocketpp library location
 WEBSOCKETPP_LIB = websocketpp
 
 # Compiler flags
-CXX_FLAGS = -Wall -c -I /opt/homebrew/include -std=c++20
+CXX_FLAGS = -Wall -c -std=c++20 -I /opt/homebrew/include
 
 # Linker flags
 LD_FLAGS = -L /opt/homebrew/Cellar/openssl@3/3.1.2/lib -lssl  -lpthread  -lcrypto
