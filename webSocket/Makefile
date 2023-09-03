@@ -2,7 +2,7 @@
 WEBSOCKETPP_LIB = websocketpp
 
 # Compiler flags
-CXX_FLAGS = -Wall -c -I /opt/homebrew/Cellar/websocketpp/0.8.2/include -I /opt/homebrew/include -std=c++20
+CXX_FLAGS = -Wall -c -I /opt/homebrew/include -std=c++20
 
 # Linker flags
 LD_FLAGS = -L /opt/homebrew/Cellar/openssl@3/3.1.2/lib -lssl  -lpthread  -lcrypto

@@ -1,7 +1,6 @@
 #include <websocketpp/client.hpp>
 #include <websocketpp/config/asio_client.hpp>
 
-
 using Client = websocketpp::client<websocketpp::config::asio_tls_client>;
 
 using ConnectionHdl = websocketpp::connection_hdl;
