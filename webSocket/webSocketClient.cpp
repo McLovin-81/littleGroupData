@@ -79,7 +79,7 @@ int main()
   Client client;
 
   // Disable logging messages
-  //turn_off_logging(client);
+  turn_off_logging(client);
 
   // Initialize the Asio event loop
   client.init_asio();
