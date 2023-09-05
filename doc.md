@@ -75,5 +75,9 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Learning about bash scripts.
 - Made a bash script to compile, link the `-lcurl` library, and delete the executable file.
 
-
-
+**05.09.2023**
+- How to work with JSON in c++
+- Which is the most efficient library to create JSON objects in C++
+- Leaning about simdjson library.
+- Parse std::string to JSON
+- Parse JSON to std::string
