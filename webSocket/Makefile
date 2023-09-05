@@ -27,9 +27,15 @@ $(TARGET): $(OBJECTS)
 %.o: %.cpp
 	g++ $(CXX_FLAGS) $<
 
+# Run the executable
+run:
+	@echo "Ruuuunning!"
+	@./$(TARGET)
+
 # Clean up compiled files and the executable
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	@rm -f $(TARGET) $(OBJECTS)
+	@echo "Cleaning..."
 
 # Mark "all" and "clean" as phony targets (no files with these names)
-.PHONY: all clean
+.PHONY: all clean run
