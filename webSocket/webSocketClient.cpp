@@ -23,8 +23,7 @@ void on_message(Client* client, ConnectionHdl hdl, websocketpp::config::asio_cli
 void on_open(Client* client, ConnectionHdl hdl)
 {
   // Prepare and send a message to subscribe to trade updates.
-  //std::string msg = "hello";
-  std::string msg = "{event:subscribe,channel:trades,chanId:19111,symbol:tBTCUSD,pair:BTCUSD}";
+  std::string msg = R"( {"event":"subscribe","channel":"trades","symbol":"tBTCUSD","pair":"BTCUSD"} )";
   std::cout << "send ↑: " << msg << std::endl;
   client->send(hdl, msg, websocketpp::frame::opcode::text);
 }
