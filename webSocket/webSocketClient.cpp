@@ -78,7 +78,7 @@ int main()
   Client client;
 
   // Disable logging messages
-  turn_off_logging(client);
+  //turn_off_logging(client);
 
   // Initialize the Asio event loop
   client.init_asio();
@@ -93,7 +93,7 @@ int main()
   set_message_handler(client);
 
   // Set the WebSocket server URL and establish the connection
-  set_url(client, "wss://api-pub.bitfinex.com/ws/2");
+  set_url(client, "wss://api-pub.bitfinex.com");
 
   // Start the WebSocket client event loop
   client.run();
