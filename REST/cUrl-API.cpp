@@ -65,6 +65,3 @@ int main()
 
 // Build command
 // g++ cUrl-API.cpp -o cUrl-API -l curl
-
-// Tim session
-// Next step für jedes Symbol ein eigen Lopp.
