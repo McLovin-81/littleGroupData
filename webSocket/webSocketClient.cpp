@@ -93,7 +93,7 @@ int main()
   set_message_handler(client);
 
   // Set the WebSocket server URL and establish the connection
-  set_url(client, "wss://api-pub.bitfinex.com");
+  set_url(client, "wss://api-pub.bitfinex.com/ws/2");
 
   // Start the WebSocket client event loop
   client.run();
