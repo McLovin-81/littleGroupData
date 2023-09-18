@@ -1,5 +1,5 @@
-#include <websocketpp/client.hpp>
-#include <websocketpp/config/asio_client.hpp>
+#include "websocketpp/websocketpp/client.hpp"
+#include "websocketpp/websocketpp/config/asio_client.hpp"
 
 using Client = websocketpp::client<websocketpp::config::asio_tls_client>;
 
@@ -23,7 +23,7 @@ void on_message(Client* client, ConnectionHdl hdl, websocketpp::config::asio_cli
 void on_open(Client* client, ConnectionHdl hdl)
 {
   // Prepare and send a message to subscribe to trade updates.
-  std::string msg = R"( { "event":"subscribe","channel":"ticker","symbol":"tBTCUSD" } )";
+  std::string msg = R"( { "event"l":"ticker","symbol":"tBTCUSD" } )";
   std::cout << "send ↑: " << msg << std::endl;
   client->send(hdl, msg, websocketpp::frame::opcode::text);
 }
