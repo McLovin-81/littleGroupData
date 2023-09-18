@@ -16,7 +16,7 @@ using websocketpp::lib::placeholders::_2;
 void on_message(Client* client, ConnectionHdl hdl, websocketpp::config::asio_client::message_type::ptr msg)
 {
   std::cout << "callback ↓: " << msg->get_payload() << std::endl;
-  // client->close(hdl, websocketpp::close::status::normal, "done");
+  client->close(hdl, websocketpp::close::status::normal, "done");
 }
 
 // Send message.
