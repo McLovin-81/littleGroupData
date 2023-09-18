@@ -101,4 +101,5 @@ int main()
   return 0;
 }
 
-// g++ webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto
+// g++ -Wall -std=c++2a webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto
+
