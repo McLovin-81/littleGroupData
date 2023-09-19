@@ -96,7 +96,7 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Troubleshooting steps taken:
   - Download WebSocket++ 0.8.2 on the business laptop.
   - Attempt using a new linker.
-  - Collaborate with Moritz Sunrap from the Cloud department.
+  - Collaborate with Moritz Sundarp from the Cloud department.
     - Investigate the proxy configuration.
     - Debug WebSocket++ classes and dependencies.
     - No solution found
