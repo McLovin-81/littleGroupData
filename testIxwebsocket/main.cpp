@@ -3,6 +3,7 @@
 #include <ixwebsocket/IXUserAgent.h>
 #include <iostream>
 
+
 int main()
 {
     // Our websocket object
@@ -43,7 +44,7 @@ int main()
     webSocket.start();
 
     // Send a message to the server (default to TEXT mode)
-    webSocket.send("hello world");
+    webSocket.send("Hello world");
 
     // Display a prompt
     std::cout << "> " << std::flush;
@@ -56,6 +57,9 @@ int main()
         webSocket.send(text);
         std::cout << "> " << std::flush;
     }
-
+std::cout << "fuck"<< std::endl;
     return 0;
 }
+
+// Compile: g++ -std=c++11 main.cpp -o main -lixwebsocket -lssl -lcrypto -lpthread -lz -lcurl
+// delete -lcurl?
