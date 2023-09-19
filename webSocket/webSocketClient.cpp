@@ -1,6 +1,8 @@
 #include "websocketpp/websocketpp/client.hpp"
 #include "websocketpp/websocketpp/config/asio_client.hpp"
 
+#include "websocketpp/websocketpp/transport/asio/connection.hpp"
+
 using Client = websocketpp::client<websocketpp::config::asio_tls_client>;
 
 using ConnectionHdl = websocketpp::connection_hdl;
@@ -76,6 +78,7 @@ int main()
 {
   // Initialize the WebSocket client
   Client client;
+  client.get_connection()->set_proxy("http://squid-proxy.gcp.dbgcloud.io:3128");
 
   // Disable logging messages
   //turn_off_logging(client);
