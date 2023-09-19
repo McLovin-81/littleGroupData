@@ -1,6 +1,8 @@
 #include <websocketpp/client.hpp>
 #include <websocketpp/config/asio_client.hpp>
 
+#include <websocketpp/transport/asio/connection.hpp>
+
 using Client = websocketpp::client<websocketpp::config::asio_tls_client>;
 
 using ConnectionHdl = websocketpp::connection_hdl;
@@ -16,14 +18,14 @@ using websocketpp::lib::placeholders::_2;
 void on_message(Client* client, ConnectionHdl hdl, websocketpp::config::asio_client::message_type::ptr msg)
 {
   std::cout << "callback ↓: " << msg->get_payload() << std::endl;
-  client->close(hdl, websocketpp::close::status::normal, "done");
+  //client->close(hdl, websocketpp::close::status::normal, "done");
 }
 
 // Send message.
 void on_open(Client* client, ConnectionHdl hdl)
 {
   // Prepare and send a message to subscribe to trade updates.
-  std::string msg = R"( { "event"l":"ticker","symbol":"tBTCUSD" } )";
+  std::string msg = R"( { "event":"subscribe","channel":"ticker","symbol":"tBTCUSD" } )";
   std::cout << "send ↑: " << msg << std::endl;
   client->send(hdl, msg, websocketpp::frame::opcode::text);
 }
@@ -67,6 +69,9 @@ void set_url(Client& client, std::string url)
 
   auto connection = client.get_connection(url, ec);
 
+  // Set Proxy
+  connection->set_proxy("http://squid-proxy.gcp.dbgcloud.io:3128", ec);
+
   client.connect(connection);
 }
 
@@ -76,10 +81,9 @@ int main()
 {
   // Initialize the WebSocket client
   Client client;
-  //client.get_connection()->set_proxy("http://squid-proxy.gcp.dbgcloud.io:3128");
 
   // Disable logging messages
-  //turn_off_logging(client);
+  turn_off_logging(client);
 
   // Initialize the Asio event loop
   client.init_asio();
