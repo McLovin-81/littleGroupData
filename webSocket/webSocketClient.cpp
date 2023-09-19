@@ -76,7 +76,7 @@ int main()
 {
   // Initialize the WebSocket client
   Client client;
-  client.get_connection()->set_proxy("http://squid-proxy.gcp.dbgcloud.io:3128");
+  //client.get_connection()->set_proxy("http://squid-proxy.gcp.dbgcloud.io:3128");
 
   // Disable logging messages
   //turn_off_logging(client);
