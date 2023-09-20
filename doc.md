@@ -114,4 +114,4 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Very unhappy with the WebSocket++ library.
   -The last release was on 19 April 2020.
   -It has 358 issues.
-- The code will be migrated to the [IXWebSocket](https://github.com/machinezone/IXWebSocket) library.
+- Looking around for alternatives like the [IXWebSocket](https://github.com/machinezone/IXWebSocket) library.
