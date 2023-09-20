@@ -76,8 +76,27 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Made a bash script to compile, link the `-lcurl` library, and delete the executable file.
 
 **05.09.2023**
-- How to work with JSON in c++
-- Which is the most efficient library to create JSON objects in C++
-- Leaning about simdjson library.
-- Parse std::string to JSON
-- Parse JSON to std::string
+- Research on working with JSON in C++.
+- Investigate efficient C++ libraries for creating JSON objects.
+- Begin learning about the simdjson library.
+- Explore how to parse a std::string into JSON.
+- Explore how to parse JSON into a std::string.
+
+**14.09.2023**
+- Realize that parsing std::string to JSON may not be necessary.
+- Discover that using a JSON-like format is sufficient, achievable through raw (R) strings.
+- Implement raw strings in the code, making it work.
+
+**15.09.2023**
+- Encounter an issue: the program works on a private MacBook but not on the business laptop.
+- Exclude potential causes.
+  - Investigate differences in OS, WebSocket++ library version, and DBAG VPN.
+
+**18.09.2023**
+- Troubleshooting steps taken:
+  - Download WebSocket++ 0.8.2 on the business laptop.
+  - Attempt using a new linker.
+  - Collaborate with Moritz Sundarp from the Cloud department.
+    - Investigate the proxy configuration.
+    - Debug WebSocket++ classes and dependencies.
+    - No solution found
