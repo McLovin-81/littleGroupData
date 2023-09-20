@@ -1,7 +1,6 @@
 #include <websocketpp/client.hpp>
 #include <websocketpp/config/asio_client.hpp>
-
-#include <websocketpp/transport/asio/connection.hpp>
+#include <websocketpp/transport/asio/connection.hpp> // Proxy function
 
 using Client = websocketpp::client<websocketpp::config::asio_tls_client>;
 
