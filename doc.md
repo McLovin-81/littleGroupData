@@ -109,3 +109,9 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Learned how to implement set_proxy() in my code
 - Added the websocketpp/transport/asio/connection.hpp header file to my code
 - Implemented the proxy in my code
+
+**20.09.2023**
+- Very unhappy with the WebSocket++ library.
+  -The last release was on 19 April 2020.
+  -It has 358 issues.
+- The code will be migrated to the IXWebSocket library.
