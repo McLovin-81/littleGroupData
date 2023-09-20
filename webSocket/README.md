@@ -33,6 +33,3 @@ This will automatically compile the `webSocketClient.cpp` source code and genera
 
 ## Customization
 You can modify the WebSocket server URL, message format, and handling functions according to your specific use case by editing the `webSocketClient.cpp` file.
-```
-
-
