@@ -29,7 +29,7 @@ $(TARGET): $(OBJECTS)
 
 # Run the executable
 run:
-	@echo "Ruuuunning!"
+	@echo "Run!"
 	@./$(TARGET)
 
 # Clean up compiled files and the executable
