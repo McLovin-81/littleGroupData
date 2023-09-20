@@ -1,12 +1,6 @@
 # Websocketpp library location
 WEBSOCKETPP_LIB = websocketpp
 
-# Compiler flags
-CXX_FLAGS = -Wall -c -std=c++20 -I /opt/homebrew/include
-
-# Linker flags
-LD_FLAGS = -L /opt/homebrew/Cellar/openssl@3/3.1.2/lib -lssl  -lpthread  -lcrypto
-
 # Target executable name
 TARGET = webSocketClient
 
@@ -15,6 +9,12 @@ SOURCES = webSocketClient.cpp
 
 # Object files (derived from source files)
 OBJECTS = $(SOURCES:.cpp=.o)
+
+# Compiler flags
+CXX_FLAGS = -Wall -c -std=c++20 -I /opt/homebrew/include
+
+# Linker flags
+LD_FLAGS = -L /opt/homebrew/Cellar/openssl@3/3.1.2/lib -lssl  -lpthread  -lcrypto
 
 # Default target to build the executable
 all: $(TARGET)
@@ -36,6 +36,10 @@ run:
 clean:
 	@rm -f $(TARGET) $(OBJECTS)
 	@echo "Cleaning..."
+
+linux:
+	g++ -Wall -std=c++2a webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto
+	@./webSocketClient
 
 # Mark "all" and "clean" as phony targets (no files with these names)
 .PHONY: all clean run
