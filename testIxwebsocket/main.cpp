@@ -1,6 +1,9 @@
 #include <ixwebsocket/IXNetSystem.h>
 #include <ixwebsocket/IXWebSocket.h>
 #include <ixwebsocket/IXUserAgent.h>
+
+#include <ixwebsocket/IXWebSocketProxyServer.h>
+
 #include <iostream>
 
 
@@ -9,10 +12,12 @@ int main()
     // Our websocket object
     ix::WebSocket webSocket;
 
+    ix::websocket_proxy_server_main(8080, "wss://api-pub.bitfinex.com/ws/2", "http://squid-proxy.gcp.dbgcloud.io:3128", true);
+
     // Connect to a server with encryption
     // See https://machinezone.github.io/IXWebSocket/usage/#tls-support-and-configuration
     //     https://github.com/machinezone/IXWebSocket/issues/386#issuecomment-1105235227 (self signed certificates)
-    std::string url("http://squid-proxy.gcp.dbgcloud.io:3128/wss://api-pub.bitfinex.com/ws/2");
+    std::string url("wss://api-pub.bitfinex.com/ws/2");
     webSocket.setUrl(url);
 
     std::cout << "Connecting to " << url << "..." << std::endl;
