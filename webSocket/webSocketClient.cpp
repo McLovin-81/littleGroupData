@@ -112,3 +112,6 @@ void set_url(Client& client, std::string url)
 
   client.connect(connection);
 }
+
+
+// Issue: Make the using of a proxy flexible
