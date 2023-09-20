@@ -100,3 +100,12 @@ By combining these technologies, we create a robust and efficient ecosystem for 
     - Investigate the proxy configuration.
     - Debug WebSocket++ classes and dependencies.
     - No solution found
+
+**19.09.2023**
+- Pair programming with Valery Tsarou
+  - Investigated the proxy configuration
+  - Debugged WebSocket++ classes about proxy
+  - Found the void set_proxy() function in the WebSocket++ GitHub repository
+- Learned how to implement set_proxy() in my code
+- Added the websocketpp/transport/asio/connection.hpp header file to my code
+- Implemented the proxy in my code
