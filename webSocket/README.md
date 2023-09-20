@@ -12,7 +12,7 @@ This is a C++ WebSocket client example using the websocketpp library to connect 
 ## Dependencies
 This code relies on the websocketpp library. You can download it using Git with the following command:
 ```bash
-git clone https://secure-web.cisco.com/1GU3A_YP2Hfsu0dgdUJHId9KEYi0QiLNEkAuwAsroBIjIjtw9i89tVgWC0ke3Fi9ywsw7yGqv2ShOeFS34oKqc2GOklk6gsVYiC-CTqpriTojEMtCMdWk0TsA-11uJIumsrU2lORDs0R0zQQqxuIYbUbye__aNfA2wz3nhb62gBj_hRUjkuk-VCnuNx6A8BtOlKQl6NRp2DLHDMtbhZFyLam686u3oOmQdAYlOgiV9UIcuXJ4IfctHiX_NwwuKxfa/https%3A%2F%2Fgithub.com%2Fzaphoyd%2Fwebsocketpp.git
+git clone https://github.com/zaphoyd/websocketpp.git
 ```
 
 ## Compilation
