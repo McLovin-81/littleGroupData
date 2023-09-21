@@ -57,7 +57,7 @@ void getMessageOnOpen(Client* client, ConnectionHdl hdl, websocketpp::config::as
   std::cout << "Get ↓: " << msg->get_payload() << std::endl;
 }
 
-websocketpp::lib::shared_ptr<SslContext> on_tls_init() // How can i simplify this?
+websocketpp::lib::shared_ptr<SslContext> on_tls_init()
 {
   auto sslContext_ptr = websocketpp::lib::make_shared<SslContext>(boost::asio::ssl::context::sslv23);
   return sslContext_ptr;
