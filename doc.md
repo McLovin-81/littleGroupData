@@ -115,3 +115,28 @@ By combining these technologies, we create a robust and efficient ecosystem for 
   -The last release was on 19 April 2020.
   -It has 358 issues.
 - Looking around for alternatives like the [IXWebSocket](https://github.com/machinezone/IXWebSocket) library.
+
+**21.09.2023**
+- The IXWebSocket-library has no possibility to connect over a proxy server.
+- No other (better) library found.
+- Refactoring
+  - Code Structure and Readability
+    - In the refactored code, the use of type aliases (`typedef`) makes the code more readable by providing meaningful names for commonly used types.
+  - Simplification and Clarity
+    - The refactored code simplifies the structure by consolidating functions and removing unnecessary comments, improving overall code clarity.
+  - Message Sending and Receiving
+    - In the old code, message sending and receiving logic was in separate functions (`on_open` and `on_message`). In the refactored code, these functionalities are moved to `sendMessageOnOpen` and `getMessageOnOpen`, respectively, making it clearer where these operations occur.
+  - Proxy Configuration
+    - Proxy configuration was done directly in the `set_url` function in the old code. In the refactored code, proxy configuration is moved to a separate variable (`proxy`) for better organization and readability.
+  - Logging Configuration
+    - In the old code, logging configuration was done in the `turn_off_logging` function. In the refactored code, the same functionality is achieved by explicitly clearing access and error channels.
+  - Main Function Structure
+    - The structure of the `main` function in the refactored code is simplified. It follows a logical flow: client initialization, configuration, connection establishment, and event loop execution.
+  - Initialization Handling
+    - TLS initialization handling is improved in the refactored code. The `on_tls_init` function provides a clear context for SSL/TLS setup.
+  - Variable Organization
+    - Variables like `msg`, `url`, and `proxy` are explicitly defined and initialized before their usage in the refactored code, enhancing code readability.
+  - Error Handling
+    - Error handling (e.g., checking error codes) is more explicitly handled in the refactored code, which can help diagnose issues more effectively.
+  
+  - Overall, the refactored code maintains the same functionality but many superfluous functions have been deleted.
