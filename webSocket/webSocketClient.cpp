@@ -24,8 +24,8 @@ int main()
   std::string proxy = "http://squid-proxy.gcp.dbgcloud.io:3128";
 
 
-  client.clear_access_channels(websocketpp::log::alevel::all);
-  client.clear_error_channels(websocketpp::log::elevel::all);
+  //client.clear_access_channels(websocketpp::log::alevel::all);
+  //client.clear_error_channels(websocketpp::log::elevel::all);
 
   client.init_asio();
 
@@ -36,7 +36,9 @@ int main()
   client.set_message_handler(websocketpp::lib::bind(&getMessageOnOpen, &client, ::_1, ::_2));
 
   auto connection = client.get_connection(url, errorCode);
+
   connection->set_proxy(proxy, errorCode);
+  
   client.connect(connection);
 
   client.run();

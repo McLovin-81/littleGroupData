@@ -38,7 +38,8 @@ clean:
 	@echo "Cleaning..."
 
 linux:
-	g++ -Wall -std=c++2a webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto
+	@echo "Compiling..."
+	@g++ -Wall -std=c++2a webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto
 	@./webSocketClient
 
 # Mark "all" and "clean" as phony targets (no files with these names)
