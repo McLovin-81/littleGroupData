@@ -42,5 +42,28 @@ linux:
 	@g++ -Wall -std=c++2a webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto
 	@./webSocketClient
 
+build:
+	@g++ -Wall -std=c++11 webSocketClient.cpp -o webSocketClient -lpthread -lssl -lcrypto -lboost_system
+
+build-image:
+	@docker build --tag websocket-client          \
+		--build-arg ARG_HTTP_PROXY=${HTTP_PROXY}    \
+    --build-arg ARG_HTTPS_PROXY=${HTTPS_PROXY}  \
+    --build-arg ARG_NO_PROXY=${NO_PROXY}        \
+		--file .devcontainer/Dockerfile .
+
+run-image:
+	@docker run -it --rm websocket-client
+
 # Mark "all" and "clean" as phony targets (no files with these names)
+help:
+	@printf "Usage: make [target]\n"
+	@printf "\n"
+	@printf "Available targets:\n"
+	@printf "\n"
+	@printf "\thelp                     Show this help message\n";
+	@printf "\tbuild-image              Build the docker image\n";
+	@printf "\trun-image                Run the docker image\n";
+	@printf "\n";
+
 .PHONY: all clean run
