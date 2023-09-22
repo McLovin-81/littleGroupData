@@ -35,13 +35,29 @@ int main()
 
   client.set_message_handler(websocketpp::lib::bind(&getMessageOnOpen, &client, ::_1, ::_2));
 
+  std::cout << errorCode.value() << std::endl;
+  std::cout << errorCode.message() << std::endl;
+  std::cout << errorCode << std::endl;
+
   auto connection = client.get_connection(url, errorCode);
 
-  connection->set_proxy(proxy, errorCode);
-  
+  std::cout << errorCode.value() << std::endl;
+  std::cout << errorCode.message() << std::endl;
+  std::cout << errorCode << std::endl;
+
+  //connection->set_proxy(proxy, errorCode);
   client.connect(connection);
 
+  std::cout << errorCode.value() << std::endl;
+  std::cout << errorCode.message() << std::endl;
+  std::cout << errorCode << std::endl;
+
+
   client.run();
+
+  std::cout << errorCode.value() << std::endl;
+  std::cout << errorCode.message() << std::endl;
+  std::cout << errorCode << std::endl;
 
   return 0;
 }
