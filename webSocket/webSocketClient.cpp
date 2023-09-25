@@ -1,7 +1,6 @@
 #include <websocketpp/client.hpp>
 #include <websocketpp/config/asio_client.hpp>
 
-#include <typeinfo>
 
 typedef websocketpp::client<websocketpp::config::asio_tls_client> Client;
 typedef websocketpp::lib::error_code ErrorCode;
@@ -26,7 +25,7 @@ int main()
   std::string https_proxy;
   std::string http_proxy;
   std::string proxy;
-
+/*
   if (getenv("HTTPS_PROXY") != NULL)
   {
     https_proxy = getenv("HTTPS_PROXY");
@@ -35,7 +34,8 @@ int main()
   {
     http_proxy = getenv("HTTP_PROXY");
   }
-  //std::string https_proxy = getenv("HTTPS_PROXY");
+  */
+  https_proxy = getenv("HTTPS_PROXY");
   //std::string http_proxy = getenv("HTTP_PROXYY");
   
 
