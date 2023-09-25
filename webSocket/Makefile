@@ -32,10 +32,11 @@ $(TARGET): $(SOURCES)
 mac: $(TARGET_MAC)
 # Rule to build the executable
 $(TARGET_MAC): $(OBJECTS)
-	$(CXX) -o $(TARGET_MAC) $(OBJECTS) $(LD_FLAGS)
+	@$(CXX) -o $(TARGET_MAC) $(OBJECTS) $(LD_MAC_FLAGS)
 # Rule to compile source files into object files
 %.o: %.cpp
-	$(CXX) $(CXX_FLAGS) $<
+	@echo "Compiling..."
+	@$(CXX) $(CXX_MAC_FLAGS) $<
 
 
 # Run the executable
@@ -48,4 +49,4 @@ clean:
 	@echo "Cleaning..."
 
 # Mark "all" and "clean" as phony targets (no files with these names)
-.PHONY: all run clean
+.PHONY: all mac run clean
