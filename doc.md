@@ -109,6 +109,7 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Learned how to implement set_proxy() in my code
 - Added the websocketpp/transport/asio/connection.hpp header file to my code
 - Implemented the proxy in my code
+  - Prgramm works!
 
 **20.09.2023**
 - Very unhappy with the WebSocket++ library.
@@ -119,6 +120,7 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 **21.09.2023**
 - The IXWebSocket-library has no possibility to connect over a proxy server.
 - No other (better) library found.
+
 - Refactoring
   - Code Structure and Readability
     - In the refactored code, the use of type aliases (`typedef`) makes the code more readable by providing meaningful names for commonly used types.
@@ -140,3 +142,27 @@ By combining these technologies, we create a robust and efficient ecosystem for 
     - Error handling (e.g., checking error codes) is more explicitly handled in the refactored code, which can help diagnose issues more effectively.
   
   - Overall, the refactored code maintains the same functionality but many superfluous functions have been deleted.
+
+**22.09.2023**
+- Problem!
+  - The code only runs on the business laptop in the DBAG network environment, nowhere else...
+  - The proxy server variable is hardcoded and assumed for the connection.
+
+- How can I use the proxy server only when needed?
+  - Checking the websocketpp::lib::error_code errorCode.
+    - How can I catch an error and react with the proxy information.
+    - Debugged WebSocket++ classes about error codes and error return.
+    - errorCode.value(), errorCode.message() did not help because the return of these functions does not change after the connection attempt.
+
+**25.09.2023**
+- After a pull request (M.L.) I am now using getenv("HTTPS_PROXY") and getenv("HTTP_PROXY").
+- Proxy gets from environment variable.
+  - "One way to do this is to use environment variables. We can set the proxy to http_proxy or            https_proxy. The solution assumes that the operating system on which the code is running has already set up a proxy".
+  - The proxy variable is now set "automatically".
+  - std::string https_proxy = getenv("HTTPS_PROXY") will crash with a segmentation fault error if there is no proxy to set.
+  - Workaround
+    - First check that the return value of getenv() is not NULL.
+    - Only if this is true, store the return of getenv() in https_proxy.
+    - If there is anything stored in https_proxy or http_proxy, store it in proxy.
+    - If the proxy variable is not empty, connect through the proxy. 
+- Code works fine on business laptop and home laptop.
