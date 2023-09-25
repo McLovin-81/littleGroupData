@@ -1,6 +1,8 @@
 #include <websocketpp/client.hpp>
 #include <websocketpp/config/asio_client.hpp>
 
+#include <typeinfo>
+
 typedef websocketpp::client<websocketpp::config::asio_tls_client> Client;
 typedef websocketpp::lib::error_code ErrorCode;
 typedef websocketpp::connection_hdl ConnectionHdl;
@@ -21,10 +23,33 @@ int main()
 
   std::string msg = R"( { "event":"subscribe","channel":"ticker","symbol":"tBTCUSD" } )";
   std::string url = "wss://api-pub.bitfinex.com/ws/2";
-  //std::string proxy = "http://squid-proxy.gcp.dbgcloud.io:3128";
-  std::string https_proxy = getenv("HTTPS_PROXY");
-  std::string http_proxy = getenv("HTTP_PROXY");
-  std::string proxy = https_proxy.length() > 0 ? https_proxy : http_proxy;
+  std::string https_proxy;
+  std::string http_proxy;
+  std::string proxy;
+
+  if (getenv("HTTPS_PROXY") != NULL)
+  {
+    https_proxy = getenv("HTTPS_PROXY");
+  }
+  else if (getenv("HTTP_PROXY") != NULL)
+  {
+    http_proxy = getenv("HTTP_PROXY");
+  }
+  //std::string https_proxy = getenv("HTTPS_PROXY");
+  //std::string http_proxy = getenv("HTTP_PROXYY");
+  
+
+  if (https_proxy.length() > 0)
+  {
+    proxy = https_proxy;
+  }
+  else if (http_proxy.length() > 0)
+  {
+    proxy = http_proxy;
+  }
+
+
+
 
   client.clear_access_channels(websocketpp::log::alevel::all);
   client.clear_error_channels(websocketpp::log::elevel::all);
@@ -40,17 +65,23 @@ int main()
   auto connection = client.get_connection(url, errorCode);
 
   //connection->set_proxy(proxy, errorCode);
-  
+  /*
   if (proxy.length() > 0)
   {
     connection->set_proxy(proxy, errorCode);
   }
-
+  */
+ std::cout << errorCode.message() << std::endl;
+  std::cout << errorCode.value() << std::endl;
   client.connect(connection);
+
+  std::cout << errorCode.value() << std::endl;
+    std::cout << errorCode.message() << std::endl;
 
   client.run();
 
   return 0;
+
 }
 
 
