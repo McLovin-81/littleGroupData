@@ -17,10 +17,14 @@ git clone https://github.com/zaphoyd/websocketpp.git
 
 ## Compilation
 To compile the WebSocket client code, you can use the provided Makefile. Simply run the following command in your terminal:
-
 ```bash
 make
 ```
+or if you are working on a Mac:
+```bash
+make mac
+```
+
 
 This will automatically compile the `webSocketClient.cpp` source code and generate the executable `webSocketClient`.
 
