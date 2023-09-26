@@ -167,4 +167,6 @@ By combining these technologies, we create a robust and efficient ecosystem for 
     - If the proxy variable is not empty, connect through the proxy. 
 - Code works fine on business laptop and home laptop.
 - Code presented to Tim Rumrich.
-- Got new tasks.
+
+**25.09.2023**
+- Starting with command line parameter
