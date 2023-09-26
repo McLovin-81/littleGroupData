@@ -1,13 +1,24 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include <string>
+#include "simdjson/simdjson.h"
+#include "simdjson/simdjson.cpp"
 
 struct Config
 {
     std::string url;
-    std::string subscribeMsg;
-}
+    const std::string CONFIG_FILENAME = "config.json";
+
+    void readConfig()
+    {
+        simdjson::dom::parser parser;
+        simdjson::dom:: element configFile = parser.load(CONFIG_FILENAME);
+        url = configFile["url"];
+    }
+
+
+
+};
 
 #endif // CONFIG_H
 

@@ -1,6 +1,8 @@
 #include <websocketpp/client.hpp>
 #include <websocketpp/config/asio_client.hpp>
 
+#include "config.h"
+
 
 typedef websocketpp::client<websocketpp::config::asio_tls_client> Client;
 typedef websocketpp::lib::error_code ErrorCode;
@@ -19,9 +21,10 @@ int main()
 {
   Client client;
   ErrorCode errorCode;
+  Config config;
 
   std::string msg = R"( { "event":"subscribe","channel":"ticker","symbol":"tBTCUSD" } )";
-  std::string url = "wss://api-pub.bitfinex.com/ws/2";
+  std::string url = config.url;
   std::string https_proxy;
   std::string http_proxy;
   std::string proxy;
