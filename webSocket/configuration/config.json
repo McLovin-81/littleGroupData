@@ -1,0 +1,8 @@
+{
+    "url": "wss://api-pub.bitfinex.com/ws/2",
+    "subscriptionMessage": {
+        "event": "subscribe",
+        "channel": "ticker",
+        "symbol": "tBTCUSD"
+    }
+}

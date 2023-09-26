@@ -1,12 +1,13 @@
 #include <iostream>
-#include <string>
 
-#include "config.h"
+#include "configuration/config.h"
+
+const std::string CONFIG_FILEPATH = "configuration/config.json";
 
 int main()
 {
     Config config;
-    config.readConfig();
+    config.readConfig(CONFIG_FILEPATH);
     std::cout << config.url << std::endl;
 
     return 0;
