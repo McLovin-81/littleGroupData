@@ -171,7 +171,7 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 
 
 
-**25.09.2023**
+**26.09.2023**
 - Stragling to parse the json format subscriptionMessage to std::string- Starting with command line parameter
   - Using a flag at compile time, the code should take certain configuration to connect to a specific site.
 - Create a directory -> configuration/ -> config.h config.json
@@ -186,4 +186,7 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Create a directory -> parser/ -> simdjson.cpp simdjson.h
   - The simdjson library files.
 
-- Stragling to parse the json format subscriptionMessage to std::string
+**27.09.2023**
+- Stragling to parse the json format subscriptionMessage to std::string.
+- Using the simdjson::to_string instead of std::to_string to parse json
+  to string.
