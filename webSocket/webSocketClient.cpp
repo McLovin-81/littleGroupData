@@ -2,6 +2,7 @@
 #include <websocketpp/config/asio_client.hpp>
 
 #include "configuration/config.h"
+const std::string CONFIG_FILEPATH = "configuration/config.json";
 
 
 typedef websocketpp::client<websocketpp::config::asio_tls_client> Client;
@@ -21,12 +22,9 @@ int main()
 {
   Client client;
   ErrorCode errorCode;
-  Config config;
+  Config config(CONFIG_FILEPATH);
 
-  const std::string CONFIG_FILEPATH = "configuration/config.json";
-  config.readConfig(CONFIG_FILEPATH);
-
-  std::string msg = R"( { "event":"subscribe","channel":"ticker","symbol":"tBTCUSD" } )";
+  std::string msg = config.subscriptionMessage;
   std::string url = config.url;
   std::string https_proxy;
   std::string http_proxy;

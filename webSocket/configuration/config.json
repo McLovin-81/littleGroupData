@@ -3,6 +3,6 @@
     "subscriptionMessage": {
         "event": "subscribe",
         "channel": "ticker",
-        "symbol": "tBTCUSD"
+        "symbol": "BTCUSD"
     }
 }

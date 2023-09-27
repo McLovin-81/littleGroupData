@@ -4,24 +4,20 @@
 #include "../parser/simdjson.h"
 #include "../parser/simdjson.cpp"
 
+
 struct Config
 {
     std::string url;
-    std::string subscriptionMessage = "";
-    
+    std::string subscriptionMessage;
 
-    void readConfig(std::string config_path)
+    Config(std::string config_path)
     {
         simdjson::dom::parser parser;
         simdjson::dom::element configFile = parser.load(config_path);
 
         url = configFile["url"];
-        for(int i = 0; i <= 3; i++)
-        {
-            subscriptionMessage += configFile["subscriptionMessage"]["event"];
-        }
+        subscriptionMessage = simdjson::to_string(configFile["subscriptionMessage"]);
     }
-
 };
 
 #endif // CONFIG_H
