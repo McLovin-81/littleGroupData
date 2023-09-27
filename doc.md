@@ -165,8 +165,25 @@ By combining these technologies, we create a robust and efficient ecosystem for 
     - Only if this is true, store the return of getenv() in https_proxy.
     - If there is anything stored in https_proxy or http_proxy, store it in proxy.
     - If the proxy variable is not empty, connect through the proxy. 
-- Code works fine on business laptop and home laptop.
+- Code works properly on business laptop and home laptop.
 - Code presented to Tim Rumrich.
+
+
+
 
 **25.09.2023**
 - Starting with command line parameter
+  - Using a flag while compiling, the the code shoud take  sertian configuration to connect with a specific page.
+- Created a directory -> configuration/ -> config.h config.json
+  - config.h
+    - struct
+      - url
+      - subscriptionMessage
+      - readConfig() -> Read the configuration information from config.json 
+        Using the simdjson library.
+  - config.json
+    - Easy to modify the configuration in json format
+- Create a directory -> parser/ -> simdjson.cpp simdjson.h
+  - the simdjson library files.
+
+- Stragling to parse the json format subscriptionMessage to std::string
