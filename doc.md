@@ -187,3 +187,6 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Stragling to parse the json format subscriptionMessage to std::string.
 - Using the simdjson::to_string instead of std::to_string to parse json
   to string.
+- Program works properly
+
+The project will be on hold for a few weeks.
