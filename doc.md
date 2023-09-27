@@ -172,18 +172,33 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 
 
 **25.09.2023**
-- Starting with command line parameter
-  - Using a flag while compiling, the the code shoud take  sertian configuration to connect with a specific page.
-- Created a directory -> configuration/ -> config.h config.json
+- Starting with command line parameters task.
+  - Using a flag at compile time, the code should take certain configuration to connect
+    to a specific page.
+- Create a directory -> configuration/ -> config.h config.json
   - config.h
-    - struct
-      - url
-      - subscriptionMessage
-      - readConfig() -> Read the configuration information from config.json 
+    - Structure
+      - URL
+      - subscription message
+      - readConfig() -> Read configuration information from config.json 
         Using the simdjson library.
   - config.json
-    - Easy to modify the configuration in json format
+    - Easily change the configuration in json format
 - Create a directory -> parser/ -> simdjson.cpp simdjson.h
-  - the simdjson library files.
+  - The simdjson library files.
+
+- Stragling to parse the json format subscriptionMessage to std::string- Starting with command line parameter
+  - Using a flag at compile time, the code should take certain configuration to connect to a specific site.
+- Create a directory -> configuration/ -> config.h config.json
+  - config.h
+    - Structure
+      - URL
+      - subscription message
+      - readConfig() -> Read configuration information from config.json 
+        Using the simdjson library.
+  - config.json
+    - Easily change the configuration in json format
+- Create a directory -> parser/ -> simdjson.cpp simdjson.h
+  - The simdjson library files.
 
 - Stragling to parse the json format subscriptionMessage to std::string
