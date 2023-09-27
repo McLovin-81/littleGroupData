@@ -168,9 +168,6 @@ By combining these technologies, we create a robust and efficient ecosystem for 
 - Code works properly on business laptop and home laptop.
 - Code presented to Tim Rumrich.
 
-
-
-
 **26.09.2023**
 - Stragling to parse the json format subscriptionMessage to std::string- Starting with command line parameter
   - Using a flag at compile time, the code should take certain configuration to connect to a specific site.
